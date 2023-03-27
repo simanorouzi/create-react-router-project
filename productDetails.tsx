@@ -1,9 +1,16 @@
 import * as React from 'react';
-import * as Router from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const ProductDetails = () => {
-  const param = Router.useParams();
-  return <div>{param.productId}</div>;
+  const param = useParams();
+  return (
+    <React.Fragment>
+      <div>{param.productId}</div>
+      <Link to=".." relative="path">
+        Back
+      </Link>
+    </React.Fragment>
+  );
 };
 
 export default ProductDetails;

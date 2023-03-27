@@ -1,13 +1,22 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-
+const ProductList = [
+  { title: 'Kebab', id: 'kebab' },
+  { title: 'Kitchen', id: 'Kitchen' },
+];
 const Products = () => {
   return (
     <React.Fragment>
       <h2>Products Page</h2>
-      <Link to="/Products/Product1">Product1</Link>
-      <Link to="/Products/Product2">Product2</Link>
-      <Link to="/Products/Product3">Product3</Link>
+      <ul>
+        <li>
+          {ProductList.map((item) => (
+            <Link key={item.id} to={item.id}>
+              {item.title}
+            </Link>
+          ))}
+        </li>
+      </ul>
     </React.Fragment>
   );
 };

@@ -8,17 +8,16 @@ import './style.css';
 const router = createBrowserRouter([
   {
     path: '/',
-    Element: <Main />,
+    element: <Main />,
     children: [
-      { path: '/', Element: <Home /> },
-      { path: '/products', Element: <Products /> },
+      { path: '/', element: <Home /> },
+      { path: '/products', element: <Products /> },
     ],
   },
 ]);
 export default function App() {
   return (
     <div>
-      <h1>Test</h1>
       <RouterProvider router={router} />
     </div>
   );
